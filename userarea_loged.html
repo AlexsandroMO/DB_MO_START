@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h3>Bem Vindos ao Sistema de <br>
+    Desenvolvimento de Aplicações</h3>
+  <br>
+
+    <img src="http://www.centrohermes.com.br/wp-content/uploads/2018/05/GPJ.jpg" alt="Intro Site" width=350 height=250>
+
+  <br>
+  <br>
+  <div class="div.margem">
+   <p></p>
+    </div>
+    <br>
+    <div class="content-section">
+       <h3>Sistema de Controle de Pacientes</h3>
+      <p class='text-muted'>Medicina Ocupacional</p>
+
+          <ul class="list-group">
+            <td>
+                <td>
+                {% if status == true%}
+                <li class="list-group-item list-group-item-light"><a href="/consultclient" class="link_thumb" style="color: #848484;">Consulta e Edição de Dados Cadastrais &nbsp &nbsp &nbsp <img src="https://gestaoclick.com.br/site/images/funcionalidades/clientes/cadastro-clientes.png" alt="some text" width=80 height=50></li>
+                {% else %}
+                <li class="list-group-item list-group-item-light"><a href="/login" class="link_thumb" style="color: #848484;">Consulta e Edição de Dados Cadastrais &nbsp &nbsp &nbsp <img src="https://gestaoclick.com.br/site/images/funcionalidades/clientes/cadastro-clientes.png" alt="some text" width=70 height=50></li>
+                {% endif %}
+            </td>
+            <td>
+                {% if status == true%}
+                <li class="list-group-item list-group-item-light"><a href="/cadastro" class="link_thumb" style="color: #848484;">Cadastro de Clientes &nbsp &nbsp &nbsp <img src="https://pouparfacil.com.br/wp-content/uploads/2018/01/Design-sem-nome-3-1-300x225.png" alt="some text" width=80 height=50></li>
+                {% else %}
+                <li class="list-group-item list-group-item-light"><a href="/login" class="link_thumb" style="color: #848484;">Cadastro de Clientes &nbsp &nbsp &nbsp <img src="https://pouparfacil.com.br/wp-content/uploads/2018/01/Design-sem-nome-3-1-300x225.png" alt="some text" width=70 height=50></li>
+                {% endif %}
+            </td>
+
+          </ul>
+        <br>
+      </div>
+
+{% endblock content %}

@@ -1,0 +1,81 @@
+<!-- https://www.htmlprogressivo.net/2014/01/Como-criar-um-formulario-completo-para-um-site.html -->
+
+{% extends "layout.html" %}
+{% block content %}
+
+<div align="left">
+<h1>WELCOME {{name_user}}</h1>
+<br>
+<br>
+<h3>CONSULTA DE PACIENTES</h3>
+<br>
+</div>
+
+<div align="center">
+<ul class="list-group">
+    <li class="list-group-item list-group-item-light">
+
+        <form action="/consultresult" method="post">
+
+        <!-- DADOS PESSOAIS-->
+
+            <ul align="right">
+            Localizar <input name="edit" type="radio" value="ler" checked="checked"/>
+            Edição <input name="edit" type="radio" value="edita"/>
+            <span class="style1"></span>
+            </ul>
+
+            <br>
+
+
+            <fieldset>
+
+             <table cellspacing="10">
+             <legend>Dados Pessoais</legend>
+
+                  <tr>
+                   <td align="center">
+                    <label align="center" for="nome">Nome: &nbsp &nbsp &nbsp</label>
+                   </td>
+                   <td>
+                    <input type="text" name="nome">
+                   </td>
+
+                   <td>
+                    <label for="sobrenome">&nbsp Sobrenome: </label>
+                   </td>
+                   <td align="left">
+                    <input type="text" name="sobrenome">
+                   </td>
+                  </tr>
+
+                  <tr>
+                   <td>
+                    <label>CPF:</label>
+                   </td>
+                   <td>
+
+                    <input type="text" name="cpf" size="9" maxlength="9"> - <input type="text" name="cpf2" size="2" maxlength="2">
+                   </td>
+                  </tr>
+                 </table>
+                </fieldset>
+                    <br>
+                    <input type="submit" value="Localizar"></form>
+                    <br>
+
+
+                </form>
+
+
+    </li>
+    </ul>
+
+
+{% endblock content %}
+
+
+
+
+<!--
+

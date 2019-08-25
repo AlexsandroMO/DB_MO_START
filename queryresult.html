@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block content %}
+
+      <h3>Table</h3>
+      <br>
+       
+             <p><a href="/userarea_loged"><img src="https://www.tcionline.com.br/secure/hapvida/images/voltar.png" alt="some text" width=100 height=100></a></p>
+
+        <br>
+      <div align="left">
+      <h3>Result</h3>
+
+        {% for table in tables %}
+        table.listaValores td a
+        <table width="200%" border="1">
+          <li ALIGN=MIDDLE WIDTH=200><td> {{ table | safe }}</td></li>
+        {% endfor %}
+        </table>
+          <br>
+          <br>
+      </div>
+
+      <p><a href="/userarea_loged"><img src="https://www.tcionline.com.br/secure/hapvida/images/voltar.png" alt="some text" width=100 height=100></a></p>
+
+      <br>
+      <br>
+  <br>
+  <br>
+
+
+{% endblock content %}
+
+<!--
+
+      <div align="left">
+      <h3>Result</h3>
+
+        {% for table in tables %}
+        table.listaValores td a
+        <table width="200%" border="1">
+          <li ALIGN=MIDDLE WIDTH=200><td> {{ table | safe }}</td></li>
+        {% endfor %}
+        </table>
+          <br>
+          <br>
+      </div>
+
+
+
+<td ALIGN=MIDDLE WIDTH=200> </td>
+
+    <div align="left">
+      <h3>Result</h3>
+
+        {% for table in tables %}
+        <table width="100%" border="20">
+          <liclass="list-group-item list-group-item-light"><td ALIGN=MIDDLE WIDTH=200> {{ table | safe }}</td></li>
+        {% endfor %}
+        </table>
+          <br>
+          <br>
+  -->

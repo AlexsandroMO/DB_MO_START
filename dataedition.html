@@ -1,0 +1,212 @@
+<!-- https://www.htmlprogressivo.net/2014/01/Como-criar-um-formulario-completo-para-um-site.html -->
+
+{% extends "layout.html" %}
+{% block content %}
+
+<div align="left">
+<h1>WELCOME {{name_user}}</h1>
+<br>
+<br>
+<h3>ÁREA DE EDIÇÃO DE DADOS. EDITAR DADOS DE {{nome}} {{sobrenome}}</h3>
+<br>
+</div>
+
+<div align="center">
+<ul class="list-group">
+    <li class="list-group-item list-group-item-light">
+
+        <form action="/editionresult" method="post">
+
+        <!-- DADOS PESSOAIS-->
+
+        <fieldset align="left">
+         <legend align="center">Dados Pessoais</legend><br>
+         <table cellspacing="10">
+          <tr>
+           <td>
+            <label for="nome">Nome: </label>
+           </td>
+           <td align="left">
+            <input type="text" name="nome" value="{{nome}}">
+           </td>
+           <td>
+            <label for="sobrenome">&nbsp Sobrenome: </label>
+           </td>
+           <td align="left">
+            <input type="text" name="sobrenome" value="{{sobrenome}}" size="30">
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <label>Nascimento: </label>
+           </td>
+           <td align="left">
+            <input type="text" name="dia" value="{{dia}}" size="2" maxlength="2" placeholder="dd">
+           <input type="text" name="mes" value="{{mes}}" size="2" maxlength="2" placeholder="mm">
+           <input type="text" name="ano" value="{{ano}}" size="4" maxlength="4" placeholder="aaaa">
+           </td>
+          </tr>
+
+           <tr>
+           <td>Sexo:</td>
+           <td><input name="sexo" type="radio" value="Masculino" />
+           Masculino
+           <input name="sexo" type="radio" value="Feminino"/>
+           Feminino <span class="style1"></span> </td>
+           {% if sexo == MASCULINO%}
+           <td><input name="sexo" type="radio" value="Masculino" checked="checked"/>
+            {% else %}
+           <td><input name="sexo" type="radio" value="Feminino" checked="checked"/>
+            {% endif %}
+           </tr>
+           <tr>
+
+          <tr>
+           <td>
+            <label>CPF:</label>
+           </td>
+           <td align="left">
+            <input type="text" name="cpf" value="{{cpf1}}" size="9" maxlength="9"> - <input type="text" name="cpf2" value="{{cpf2}}" size="2" maxlength="2">
+           </td>
+          </tr>
+         </table>
+        </fieldset>
+
+        <br/>
+        <!-- ENDEREÇO -->
+        <fieldset align="left">
+         <legend align="center">Dados de Endereço</legend><br>
+         <table cellspacing="10">
+
+          <tr>
+           <td>
+            <label for="rua">Rua:</label>
+           </td>
+           <td align="left">
+            <input type="text" name="rua" value="{{rua}}" size="30">
+           </td>
+           <td>
+            <label for="numero">Numero:</label>
+           </td>
+           <td align="left">
+            <input type="text" name="numero" value="{{numero}}" size="4">
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <label for="bairro">Bairro: </label>
+           </td>
+           <td align="left">
+            <input type="text" name="bairro" value="{{bairro}}" size="30">
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <label for="estado">Estado:</label>
+           </td>
+           <td align="left">
+            <select name="estado">
+            <option value="{{estado}}">{{estado}}</option>
+            <option value="ac">Acre</option>
+            <option value="al">Alagoas</option>
+            <option value="am">Amazonas</option>
+            <option value="ap">Amapá</option>
+            <option value="ba">Bahia</option>
+            <option value="ce">Ceará</option>
+            <option value="df">Distrito Federal</option>
+            <option value="es">Espírito Santo</option>
+            <option value="go">Goiás</option>
+            <option value="ma">Maranhão</option>
+            <option value="mt">Mato Grosso</option>
+            <option value="ms">Mato Grosso do Sul</option>
+            <option value="mg">Minas Gerais</option>
+            <option value="pa">Pará</option>
+            <option value="pb">Paraíba</option>
+            <option value="pr">Paraná</option>
+            <option value="pe">Pernambuco</option>
+            <option value="pi">Piauí</option>
+            <option value="rj">Rio de Janeiro</option>
+            <option value="rn">Rio Grande do Norte</option>
+            <option value="ro">Rondônia</option>
+            <option value="rs">Rio Grande do Sul</option>
+            <option value="rr">Roraima</option>
+            <option value="sc">Santa Catarina</option>
+            <option value="se">Sergipe</option>
+            <option value="sp">São Paulo</option>
+            <option value="to">Tocantins</option>
+           </select>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <label for="cidade">Cidade: </label>
+           </td>
+           <td align="left">
+            <input type="text" name="cidade" value="{{cidade}}" size="30">
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <label for="cep">CEP: </label>
+           </td>
+           <td align="left">
+            <input type="text" name="cep" value="{{cep1}}" size="5" maxlength="5"> - <input type="text" name="cep2" value="{{cep2}}" size="3" maxlength="3">
+           </td>
+          </tr>
+         </table>
+        </fieldset>
+        <br />
+
+        <!-- DADOS DE EXAME -->
+
+        <fieldset align="left">
+         <legend align="center">Dados do Exame</legend><br>
+         <table cellspacing="10">
+          <tr>
+           <td>
+            <label for="company">Empresa: </label>
+           </td>
+           <td align="left">
+            <input type="text" name="company" value="{{company}}">
+           </td>
+          </tr>
+
+          <tr>
+           <td>
+            <label for="type-exam">Tipo de Exame: </label>
+           </td>
+           <td align="left">
+            <input type="text" name="name-type" value="{{exam_type}}">
+           </td>
+          </tr>
+
+          <td>
+            <label for="name-exam" size="10">Nome do Exame:</label>
+           </td>
+           <td align="left">
+            <select name="exame">
+            <option value="{{exame}}">{{exame}}</option>
+            <option value="emo">Hemograma</option>
+            <option value="col">Colesterol</option>
+            <option value="tri">Triglicerídeos</option>
+            <option value="gli">Glicemia</option>
+            <option value="acu">Ácido Úrico</option>
+           </select>
+           </td>
+          </tr>
+
+         </table>
+        </fieldset>
+        <br />
+        <input type="submit">
+
+       </li>
+    </ul>
+
+        </form>
+
+
+
+{% endblock content %}
+
+
