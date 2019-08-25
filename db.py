@@ -4,6 +4,7 @@ import xlrd
 from tinydb import TinyDB, Query
 import openpyxl
 
+'''
 db = TinyDB('DB_JSON/db.json')
 
 #===============================
@@ -21,6 +22,7 @@ def query_email_confere(email, password):
     new_db = db.search(Ft.EMAIL == email and Ft.PASSWORD == password)
   
     return new_db
+
 
 #===================
 ## DONWLOAD
@@ -103,3 +105,4 @@ def create_list():
 # def db_query3():
 #   return db.remove(Ft.senha == 'Ell')
 
+'''
